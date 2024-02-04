@@ -109,7 +109,6 @@ function StoreScreen({products}: {products: Product[]}) {
       </div>
       {/* Grid of products by category */}
       <div className="flex flex-col">
-        Yes Yes
         {categories.length ? (
           categories.map(([category, categoryProducts]) => (
             <div key={category} className="flex flex-col gap-4 border-t py-4" id={category}>
