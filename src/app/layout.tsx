@@ -29,6 +29,7 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
         <ThemeProvider>
           <div className="m-auto max-w-screen-xl rounded-sm">
             <header className="flex flex-col gap-4 p-4">
+              im still in love
               <img
                 alt={store.title}
                 className="h-32 rounded-lg object-cover sm:h-64"
