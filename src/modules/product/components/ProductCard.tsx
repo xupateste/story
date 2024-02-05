@@ -13,31 +13,21 @@ import {parseCurrency} from "~/currency/utils";
 function ProductCard({product, onAdd}: {product: Product; onAdd: (product: Product) => void}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const cartItem = useMemo<CartItem>(() => ({...product, quantity: 1}), [product]);
+  
 
   return (
     <>
       <div
         key={product.id}
-        className="flex-col items-end border-white/300 flex cursor-pointer relative justify-between rounded-md border"
+        className="flex-col items-end border-white/300 flex cursor-pointer relative justify-between rounded-md border p-1 sm:p-2"
         data-testid="product"
         onClick={() => setIsModalOpen(true)}
       >
-        <div className="flex gap-4 p-4">
-          <div className="flex flex-col justify-between gap-1">
-            <div className="flex flex-col gap-1">
-              <p className="line-clamp-[1] font-medium sm:line-clamp-[2]">{product.title}</p>
-              <p className="line-clamp-[2] text-sm text-muted-foreground sm:line-clamp-3">
-                {product.description}
-              </p>
-            </div>
-            <div className="flex items-end">
-              <p className="text-sm font-medium text-incentive">{parseCurrency(product.price)}</p>
-            </div>
-          </div>
+        <div className="flex-end flex-col space-between relative">
           {product.image ? (
             <img
               alt={product.title}
-              className="min-w-24 sm:min-w-36 aspect-square h-24 w-24 rounded-md bg-muted/50 object-cover sm:h-36 sm:w-36"
+              className="min-w-32 sm:min-h-48 sm:min-w-48 aspect-square w-full rounded-md bg-muted/50 object-cover sm:h-32 sm:w-32"
               loading="lazy"
               src={product.image}
             />
@@ -46,6 +36,14 @@ function ProductCard({product, onAdd}: {product: Product; onAdd: (product: Produ
               <ImageOff className="m-auto h-12 w-12 opacity-10 sm:h-16 sm:w-16" />
             </div>
           )}
+          <div className="flex flex-col justify-between gap-1">
+            <div className="flex flex-col gap-1 pt-1">
+              <p className="text-sm font-medium leading-4 font-sans tracking-tight">{(product.title)}</p>
+            </div>
+            <div className="flex items-end">
+              <p className="text-lg font-medium text-incentive leading-4">{parseCurrency(product.price)}</p>
+            </div>
+          </div>
         </div>
       </div>
       {isModalOpen ? (

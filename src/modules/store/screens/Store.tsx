@@ -124,7 +124,7 @@ function StoreScreen({products}: {products: Product[]}) {
                 {layout === "list" && <ChevronDown className="h-6 w-6 opacity-40" />}
               </div>
               {((layout === "list" && selectedCategory === category) || layout === "grid") && (
-                <div className="grid gap-4 grid-flow-col items-start auto-cols-[minmax(0,220)] overflow-x-auto overflow-y-hidden">
+                <div className="grid gap-2 sm:gap-4 grid-flow-col items-start auto-cols-[minmax(0,220)] overflow-x-auto overflow-y-hidden pb-2">
                   {categoryProducts.length ? (
                     categoryProducts.map((product) => (
                       <ProductCard
