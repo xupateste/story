@@ -18,12 +18,12 @@ function ProductCard({product, onAdd}: {product: Product; onAdd: (product: Produ
     <>
       <div
         key={product.id}
-        className="border-white/300 flex cursor-pointer items-center justify-between gap-3 rounded-md border"
+        className="flex-col items-end border-white/300 flex cursor-pointer relative justify-between rounded-md border"
         data-testid="product"
         onClick={() => setIsModalOpen(true)}
       >
-        <div className="flex h-full w-full gap-4 p-4">
-          <div className="flex w-full flex-col justify-between gap-1">
+        <div className="flex gap-4 p-4">
+          <div className="flex flex-col justify-between gap-1">
             <div className="flex flex-col gap-1">
               <p className="line-clamp-[1] font-medium sm:line-clamp-[2]">{product.title}</p>
               <p className="line-clamp-[2] text-sm text-muted-foreground sm:line-clamp-3">
@@ -36,6 +36,7 @@ function ProductCard({product, onAdd}: {product: Product; onAdd: (product: Produ
           </div>
           {product.image ? (
             <img
+              fadeIn
               alt={product.title}
               className="min-w-24 sm:min-w-36 aspect-square h-24 w-24 rounded-md bg-muted/50 object-cover sm:h-36 sm:w-36"
               loading="lazy"

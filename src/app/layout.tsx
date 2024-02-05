@@ -82,14 +82,14 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
             <footer className="px-4">
               {/* Inicio de copyright - Cambiar el contenido de los mismos viola el contenido de los terminos de licencia */}
               <p className="sm:text-md border-t py-4 text-center text-sm text-muted-foreground">
-                © Copyright {new Date().getFullYear()}. Hecho con <ThemeToggle /> y Next.js, por{" "}
+                © Copyright {new Date().getFullYear()}. {" "}
                 <a
                   className="underline"
-                  href="https://twitter.com/goncy"
+                  href="https://ferreteros.app"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  goncy
+                  Ferreteros.app
                 </a>
                 .
               </p>

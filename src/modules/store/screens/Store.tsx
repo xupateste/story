@@ -15,7 +15,7 @@ function StoreScreen({products}: {products: Product[]}) {
   const [, {addItem}] = useCart();
   const [query, setQuery] = useState<string>("");
   const [layout, setLayout] = useState<"list" | "grid">(() =>
-    products.length > 30 ? "list" : "grid",
+    "grid",
   );
   const [selectedCategory, setSelectedCategory] = useState<Product["category"] | null>(null);
   const categories = useMemo<[Product["category"], Product[]][]>(() => {
@@ -124,7 +124,7 @@ function StoreScreen({products}: {products: Product[]}) {
                 {layout === "list" && <ChevronDown className="h-6 w-6 opacity-40" />}
               </div>
               {((layout === "list" && selectedCategory === category) || layout === "grid") && (
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-4 grid-flow-col items-start auto-cols-[minmax(0,220)] overflow-x-auto overflow-y-hidden">
                   {categoryProducts.length ? (
                     categoryProducts.map((product) => (
                       <ProductCard
