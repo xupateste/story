@@ -36,7 +36,6 @@ function ProductCard({product, onAdd}: {product: Product; onAdd: (product: Produ
           </div>
           {product.image ? (
             <img
-              fadeIn
               alt={product.title}
               className="min-w-24 sm:min-w-36 aspect-square h-24 w-24 rounded-md bg-muted/50 object-cover sm:h-36 sm:w-36"
               loading="lazy"
