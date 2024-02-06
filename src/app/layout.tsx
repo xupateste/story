@@ -3,6 +3,9 @@ import type {Metadata} from "next";
 import api from "~/store/api";
 import WhatsappIcon from "~/ui/components/icons/whatsapp";
 import InstagramIcon from "~/ui/components/icons/instagram";
+import FacebookIcon from "~/ui/components/icons/facebook";
+import TiktokIcon from "~/ui/components/icons/tiktok";
+import YoutubeIcon from "~/ui/components/icons/youtube";
 import CartProvider from "~/cart/context";
 import ThemeProvider from "~/theme/context";
 import ThemeToggle from "~/theme/components/ThemeToggle";
@@ -69,6 +72,42 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
                       >
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
                           <WhatsappIcon />
+                        </div>
+                      </a>
+                    ) : null}
+                    {store.facebook ? (
+                      <a
+                        aria-label="Facebook"
+                        href={store.facebook}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
+                          <FacebookIcon />
+                        </div>
+                      </a>
+                    ) : null}
+                    {store.tiktok ? (
+                      <a
+                        aria-label="Tiktok"
+                        href={store.tiktok}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
+                          <TiktokIcon />
+                        </div>
+                      </a>
+                    ) : null}
+                    {store.youtube ? (
+                      <a
+                        aria-label="Youtube"
+                        href={store.youtube}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
+                          <YoutubeIcon />
                         </div>
                       </a>
                     ) : null}

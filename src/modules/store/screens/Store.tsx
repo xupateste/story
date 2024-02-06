@@ -68,25 +68,25 @@ function StoreScreen({products}: {products: Product[]}) {
     <div className="flex flex-col">
       {/* Filters */}
       <div
-        className="sticky top-0 z-10 w-full flex items-center justify-between bg-teal-50 dark:bg-teal-950 gap-4 bg-background py-4"
+        className="sticky top-0 z-10 w-full flex items-center justify-between bg-teal-50 dark:bg-teal-950 gap-2 bg-background py-4"
         id="filters"
       >
-        <div className="relative flex w-full items-center px-3">
+        <div className="relative flex w-full items-center pl-3">
           <SearchIcon className="absolute left-6 h-4 w-4 text-gray-700"/>
           <Input
-            className="px-9 text-base bg-white text-gray-700"
+            className="px-9 text-base bg-white dark:bg-gray-250 text-gray-700"
             placeholder="El que busca encuentra..."
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
           {Boolean(query) && (
             <X
-              className="absolute right-6 h-4 w-4 cursor-pointer text-gray-700"
+              className="absolute right-4 h-4 w-4 cursor-pointer text-gray-700"
               onClick={() => setQuery("")}
             />
           )}
         </div>
-        {/*<div className="flex gap-2">
+        <div className="flex gap-2 pr-2">
           <Toggle
             aria-label="Vista de lista"
             pressed={layout === "list"}
@@ -105,7 +105,7 @@ function StoreScreen({products}: {products: Product[]}) {
               <Table className="h-6 w-6 cursor-pointer opacity-40" />
             </div>
           </Toggle>
-        </div>*/}
+        </div>
       </div>
       {/* Grid of products by category */}
       <div className="flex flex-col">
