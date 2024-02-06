@@ -13,13 +13,13 @@ import {parseCurrency} from "~/currency/utils";
 function ProductCard({product, onAdd}: {product: Product; onAdd: (product: Product) => void}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const cartItem = useMemo<CartItem>(() => ({...product, quantity: 1}), [product]);
-  
+
 
   return (
     <>
       <div
         key={product.id}
-        className="flex-col items-end border-white/300 flex cursor-pointer relative justify-between rounded-md border p-1 sm:p-2"
+        className="flex-col items-end border-white/300 flex cursor-pointer relative justify-between rounded-md border p-1 sm:p-2 pb-2 bg-gray-50 dark:bg-gray-800"
         data-testid="product"
         onClick={() => setIsModalOpen(true)}
       >
@@ -27,7 +27,7 @@ function ProductCard({product, onAdd}: {product: Product; onAdd: (product: Produ
           {product.image ? (
             <img
               alt={product.title}
-              className="min-w-32 sm:min-h-48 sm:min-w-48 aspect-square w-full rounded-md bg-muted/50 object-cover sm:h-32 sm:w-32"
+              className="min-w-36 sm:min-h-48 sm:min-w-48 aspect-square w-full rounded-md bg-muted/50 object-cover sm:h-36 sm:w-36"
               loading="lazy"
               src={product.image}
             />

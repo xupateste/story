@@ -27,11 +27,11 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
       <head />
       <body>
         <ThemeProvider>
-          <div className="m-auto max-w-screen-xl rounded-sm">
-            <header className="flex flex-col gap-4 p-4">
+          <div className="m-auto max-w-screen-xl">
+            <header className="flex flex-col gap-4 pb-3">
               <img
                 alt={store.title}
-                className="h-32 rounded-lg object-cover sm:h-64"
+                className="h-32 object-cover sm:h-64"
                 src={store.banner}
               />
               <div className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-4">
@@ -76,7 +76,7 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
                 </div>
               </div>
             </header>
-            <main className="px-4">
+            <main className="px-0">
               <CartProvider>{children}</CartProvider>
             </main>
             <footer className="px-4">

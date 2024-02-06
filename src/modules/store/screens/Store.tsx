@@ -68,25 +68,25 @@ function StoreScreen({products}: {products: Product[]}) {
     <div className="flex flex-col">
       {/* Filters */}
       <div
-        className="sticky top-0 z-10 flex items-center justify-between gap-4 bg-background py-4"
+        className="sticky top-0 z-10 w-full flex items-center justify-between bg-teal-50 dark:bg-teal-950 gap-4 bg-background py-4"
         id="filters"
       >
-        <div className="relative flex w-full items-center sm:max-w-xs">
-          <SearchIcon className="absolute left-3 h-4 w-4 opacity-40" />
+        <div className="relative flex w-full items-center px-3">
+          <SearchIcon className="absolute left-6 h-4 w-4 text-gray-700"/>
           <Input
-            className="px-9"
-            placeholder="Buscar..."
+            className="px-9 text-base bg-white text-gray-700"
+            placeholder="El que busca encuentra..."
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
           {Boolean(query) && (
             <X
-              className="absolute right-3 h-4 w-4 cursor-pointer opacity-40"
+              className="absolute right-6 h-4 w-4 cursor-pointer text-gray-700"
               onClick={() => setQuery("")}
             />
           )}
         </div>
-        <div className="flex gap-2">
+        {/*<div className="flex gap-2">
           <Toggle
             aria-label="Vista de lista"
             pressed={layout === "list"}
@@ -105,7 +105,7 @@ function StoreScreen({products}: {products: Product[]}) {
               <Table className="h-6 w-6 cursor-pointer opacity-40" />
             </div>
           </Toggle>
-        </div>
+        </div>*/}
       </div>
       {/* Grid of products by category */}
       <div className="flex flex-col">
@@ -113,7 +113,7 @@ function StoreScreen({products}: {products: Product[]}) {
           categories.map(([category, categoryProducts]) => (
             <div key={category} className="flex flex-col gap-4 border-t py-4" id={category}>
               <div
-                className={cn("flex items-center justify-between gap-4", {
+                className={cn("flex items-center justify-between gap-4 px-4", {
                   "cursor-pointer": layout === "list",
                 })}
                 onClick={() => handleSelectCategory(category)}
@@ -124,7 +124,7 @@ function StoreScreen({products}: {products: Product[]}) {
                 {layout === "list" && <ChevronDown className="h-6 w-6 opacity-40" />}
               </div>
               {((layout === "list" && selectedCategory === category) || layout === "grid") && (
-                <div className="grid gap-2 sm:gap-4 grid-flow-col items-start auto-cols-[minmax(0,220)] overflow-x-auto overflow-y-hidden pb-2">
+                <div className="grid gap-2 sm:gap-4 grid-flow-col items-start auto-cols-[minmax(0,220)] overflow-x-auto overflow-y-hidden pb-2 px-4">
                   {categoryProducts.length ? (
                     categoryProducts.map((product) => (
                       <ProductCard
