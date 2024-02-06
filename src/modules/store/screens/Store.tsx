@@ -23,8 +23,8 @@ function StoreScreen({products}: {products: Product[]}) {
 
     // Filter products by search query
     if (query) {
-      draft = draft.filter(({title, description}) =>
-        (title.toLowerCase() + description.toLowerCase()).includes(query.toLowerCase()),
+      draft = draft.filter(({title, description, id}) =>
+        (title.toLowerCase() + description.toLowerCase() + id.toLowerCase()).includes(query.toLowerCase()),
       );
     }
 
@@ -68,7 +68,7 @@ function StoreScreen({products}: {products: Product[]}) {
     <div className="flex flex-col">
       {/* Filters */}
       <div
-        className="sticky top-0 z-10 w-full flex items-center justify-between bg-teal-50 dark:bg-teal-950 gap-2 bg-background py-4"
+        className="sticky top-0 z-10 w-full flex items-center justify-between bg-teal-50 dark:bg-teal-950 gap-1 bg-background py-4"
         id="filters"
       >
         <div className="relative flex w-full items-center pl-3">
@@ -86,7 +86,7 @@ function StoreScreen({products}: {products: Product[]}) {
             />
           )}
         </div>
-        <div className="flex gap-2 pr-2">
+        <div className="flex gap-1 pr-2">
           <Toggle
             aria-label="Vista de lista"
             pressed={layout === "list"}
