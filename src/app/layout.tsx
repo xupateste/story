@@ -51,18 +51,6 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
                     <p className="font-medium text-muted-foreground">{store.subtitle}</p>
                   </div>
                   <div className="flex gap-2">
-                    {store.whatsapp ? (
-                      <a
-                        aria-label="Whatsapp"
-                        href={store.whatsapp}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
-                          <WhatsappIcon />
-                        </div>
-                      </a>
-                    ) : null}
                     {store.instagram ? (
                       <a
                         aria-label="Instagram"
@@ -72,6 +60,18 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
                       >
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
                           <InstagramIcon />
+                        </div>
+                      </a>
+                    ) : null}
+                    {store.whatsapp ? (
+                      <a
+                        aria-label="Whatsapp"
+                        href={store.whatsapp}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
+                          <WhatsappIcon />
                         </div>
                       </a>
                     ) : null}
@@ -118,16 +118,16 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
             <main className="px-0">
               <CartProvider>{children}</CartProvider>
             </main>
-            <footer className="flex flex-col items-center justify-center">
+            <footer className="px-4">
               {/* Inicio de copyright - Cambiar el contenido de los mismos viola el contenido de los terminos de licencia */}
               <div
                 className="inline-flex flex-center mb-8 mt-2 items-center justify-center"
               >  
-                <div fontSize="md" mt={2}>
+                <div>
                   Sitio creado con
                 </div>
                 <a href="/" className="ml-2">
-                  <img src={"/assets/ferreteros-app-black.png"} className="h-6 mb-1"/>
+                  <img alt="Ferreteros.app" src={"/assets/ferreteros-app-black.png"} className="h-6 mb-1"/>
                 </a>
               </div>
               {/* Fin de copyright */}
