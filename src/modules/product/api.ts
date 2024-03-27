@@ -126,7 +126,7 @@ const api = {
     const products = await api.list();
     const product = products.find((product) => product.id === id);
 
-    // if (!product) return notFound();
+    if (!product) return {} as IProduct;
 
     return product;
   },
