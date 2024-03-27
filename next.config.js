@@ -4,4 +4,14 @@ module.exports = {
   experimental: {
     appDir: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: 'https://ferreteros.app/ferrisur',
+        permanent: false,
+        basePath: false
+      },
+    ]
+  },
 };

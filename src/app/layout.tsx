@@ -121,7 +121,7 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
             <footer className="px-4">
               {/* Inicio de copyright - Cambiar el contenido de los mismos viola el contenido de los terminos de licencia */}
               <div
-                className="inline-flex flex-center mb-8 mt-2 items-center justify-center"
+                className="inline-flex w-full flex-center mb-8 mt-2 items-center justify-center"
               >  
                 <div>
                   Sitio creado con

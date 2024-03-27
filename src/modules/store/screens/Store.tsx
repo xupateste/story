@@ -68,7 +68,7 @@ function StoreScreen({products}: {products: Product[]}) {
     <div className="flex flex-col">
       {/* Filters */}
       <div
-        className="sticky top-0 z-10 w-full flex items-center justify-between bg-teal-50 dark:bg-teal-950 gap-1 bg-background py-4"
+        className="sticky top-0 z-10 w-full flex items-center justify-between bg-brand-50 dark:bg-brand-950 gap-1 bg-background py-4"
         id="filters"
       >
         <div className="relative flex w-full items-center pl-3">
