@@ -3,9 +3,6 @@ import type {Metadata} from "next";
 import api from "~/store/api";
 import WhatsappIcon from "~/ui/components/icons/whatsapp";
 import InstagramIcon from "~/ui/components/icons/instagram";
-import FacebookIcon from "~/ui/components/icons/facebook";
-import TiktokIcon from "~/ui/components/icons/tiktok";
-import YoutubeIcon from "~/ui/components/icons/youtube";
 import CartProvider from "~/cart/context";
 import ThemeProvider from "~/theme/context";
 import ThemeToggle from "~/theme/components/ThemeToggle";
@@ -30,11 +27,11 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
       <head />
       <body>
         <ThemeProvider>
-          <div className="m-auto max-w-screen-xl">
-            <header className="flex flex-col gap-4 pb-3">
+          <div className="m-auto max-w-screen-xl rounded-sm">
+            <header className="flex flex-col gap-4 p-4">
               <img
                 alt={store.title}
-                className="h-32 object-cover sm:h-64"
+                className="h-32 rounded-lg object-cover sm:h-64"
                 src={store.banner}
               />
               <div className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-4">
@@ -75,61 +72,27 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
                         </div>
                       </a>
                     ) : null}
-                    {store.facebook ? (
-                      <a
-                        aria-label="Facebook"
-                        href={store.facebook}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
-                          <FacebookIcon />
-                        </div>
-                      </a>
-                    ) : null}
-                    {store.tiktok ? (
-                      <a
-                        aria-label="Tiktok"
-                        href={store.tiktok}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
-                          <TiktokIcon />
-                        </div>
-                      </a>
-                    ) : null}
-                    {store.youtube ? (
-                      <a
-                        aria-label="Youtube"
-                        href={store.youtube}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white">
-                          <YoutubeIcon />
-                        </div>
-                      </a>
-                    ) : null}
                   </div>
                 </div>
               </div>
             </header>
-            <main className="px-0">
+            <main className="px-4">
               <CartProvider>{children}</CartProvider>
             </main>
             <footer className="px-4">
               {/* Inicio de copyright - Cambiar el contenido de los mismos viola el contenido de los terminos de licencia */}
-              <div
-                className="inline-flex w-full flex-center mb-8 mt-2 items-center justify-center"
-              >  
-                <div>
-                  Sitio creado con
-                </div>
-                <a href="/" className="ml-2">
-                  <img alt="Ferreteros.app" src={"/assets/ferreteros-app-black.png"} className="h-6 mb-1"/>
+              <p className="sm:text-md border-t py-4 text-center text-sm text-muted-foreground">
+                © Copyright {new Date().getFullYear()}. Hecho con <ThemeToggle /> y Next.js, por{" "}
+                <a
+                  className="underline"
+                  href="https://twitter.com/goncy"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  goncy
                 </a>
-              </div>
+                .
+              </p>
               {/* Fin de copyright */}
             </footer>
           </div>

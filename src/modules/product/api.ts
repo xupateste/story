@@ -1,7 +1,7 @@
 import type {Option as IOption, Product as IProduct} from "./types";
 
 import Papa from "papaparse";
-// import {notFound} from "next/navigation";
+import {notFound} from "next/navigation";
 
 interface RawOption extends IOption {
   type: "option";
@@ -126,7 +126,7 @@ const api = {
     const products = await api.list();
     const product = products.find((product) => product.id === id);
 
-    if (!product) return {} as IProduct;
+    if (!product) return notFound();
 
     return product;
   },

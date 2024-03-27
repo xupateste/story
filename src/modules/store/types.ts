@@ -5,8 +5,5 @@ export interface Store {
   banner: string;
   instagram: string;
   whatsapp: string;
-  facebook: string;
-  tiktok: string;
-  youtube: string;
   phone: string;
 }
