@@ -44,7 +44,7 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
                 </div>
                 <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:gap-2 sm:text-left">
                   <div className="flex flex-col gap-1">
-                    <p className="text-3xl font-bold sm:text-4xl">{store.title}</p>
+                    <p className="text-3xl font-bold sm:text-4xl">{store.title} yes yes</p>
                     <p className="font-medium text-muted-foreground">{store.subtitle}</p>
                   </div>
                   <div className="flex gap-2">
