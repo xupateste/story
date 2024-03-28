@@ -80,20 +80,7 @@ const RootLayout = async ({children}: {children: React.ReactNode}) => {
               <CartProvider>{children}</CartProvider>
             </main>
             <footer className="px-4">
-              {/* Inicio de copyright - Cambiar el contenido de los mismos viola el contenido de los terminos de licencia */}
-              <p className="sm:text-md border-t py-4 text-center text-sm text-muted-foreground">
-                © Copyright {new Date().getFullYear()}. Hecho con <ThemeToggle /> y Next.js, por{" "}
-                <a
-                  className="underline"
-                  href="https://twitter.com/goncy"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  goncy
-                </a>
-                .
-              </p>
-              {/* Fin de copyright */}
+              footer
             </footer>
           </div>
         </ThemeProvider>
